@@ -2,7 +2,8 @@
 import {CHANGE_TEST} from './actions';
 
 const initialState = {
-    test : "This is a test"
+    test : "This is a test",
+    // cart : [{name : "iphone", image : "https://www.imageurl.com", price : 100, quantity : 3}]
 }
 
 export const reducer = (state = initialState, action) => {
