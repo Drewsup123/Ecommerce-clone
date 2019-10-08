@@ -8,6 +8,8 @@ import {Provider} from 'react-redux';
 import {reducer} from './redux/reducer';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+// React Router Imports
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const store = createStore(
     reducer,
@@ -15,8 +17,10 @@ const store = createStore(
 )
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>
+    <Router>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </Router>
 , document.getElementById('root'));
 

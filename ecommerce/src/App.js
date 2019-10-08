@@ -3,26 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 import {connect} from 'react-redux';
 import {changeTest} from './redux/actions';
+import { Route, Link } from 'react-router-dom';
+// Component Imports
+import Products from './components/Products';
+import Cart from './components/Cart';
 
 function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>{props.test}</h1>
-        <button onClick={props.changeTest}>Change the Text</button>
-      </header>
+      <Link to="/cart">
+        <p>Go To cart</p>
+      </Link>
+      <Route exact path="/" render={() => <Products />} />
+      <Route path="/cart" render={() => <Cart />} />
     </div>
   );
 }
