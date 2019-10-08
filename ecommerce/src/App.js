@@ -7,12 +7,15 @@ import { Route, Link } from 'react-router-dom';
 // Component Imports
 import Products from './components/Products';
 import Cart from './components/Cart';
+import Button from './components/GoToCartBtn';
 
 function App(props) {
   return (
     <div className="App">
       <Link to="/cart">
-        <p>Go To cart</p>
+        <Button>
+          Go To Cart
+        </Button>
       </Link>
       <Route exact path="/" render={() => <Products />} />
       <Route path="/cart" render={() => <Cart />} />
