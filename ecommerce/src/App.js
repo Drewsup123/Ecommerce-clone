@@ -1,19 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
 import {connect} from 'react-redux';
 import {changeTest} from './redux/actions';
 import { Route, Link } from 'react-router-dom';
 // Component Imports
 import Products from './components/Products';
 import Cart from './components/Cart';
-import Button from './components/GoToCartBtn';
 import Navigation from './components/Navigation';
+
+const ContentContainer = styled.div`
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  margin-top : 100px;
+`
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Route path="/" render={() => <Navigation />} />
-      <Route exact path="/" render={() => <Products />} />
-      <Route path="/cart" render={() => <Cart />} />
+      <ContentContainer>
+        <Route exact path="/" render={() => <Products />} />
+        <Route path="/cart" render={() => <Cart />} />
+      </ContentContainer>
     </div>
   );
 }
